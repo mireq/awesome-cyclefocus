@@ -1044,7 +1044,7 @@ cyclefocus.cycle = function(startdirection_or_args, args)
                 container_margin_left_right, container_margin_left_right,
                 container_margin_top_bottom, container_margin_top_bottom)
             container_layout = wibox.container.background(container_layout)
-            container_layout:set_bg(beautiful.bg_normal..'cc')
+            container_layout:set_bg(beautiful.bg_normal)
 
             wbox:set_widget(container_layout)
             -- "fixed" appears to work better for when there are no icons to
