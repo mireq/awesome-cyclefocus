@@ -745,12 +745,7 @@ local wbox_screen
 local layout
 
 -- Main function.
-cyclefocus.cycle = function(startdirection_or_args, args)
-    if type(startdirection_or_args) == 'number' then
-        awful.util.deprecate('startdirection is not used anymore: pass in args only', {raw=true})
-    else
-        args = startdirection_or_args
-    end
+cyclefocus.cycle = function(args)
     args = awful.util.table.join(awful.util.table.clone(cyclefocus), args)
     -- The key name of the (last) modifier: this gets used for the "release" event.
     local modifier = args.modifier or 'Alt_L'
@@ -1182,14 +1177,9 @@ end
 
 
 -- A helper method to wrap awful.key.
-function cyclefocus.key(mods, key, startdirection_or_args, args)
+function cyclefocus.key(mods, key, args)
     mods = mods or {modkey} or {"Mod4"}
     key = key or "Tab"
-    if type(startdirection_or_args) == 'number' then
-        awful.util.deprecate('startdirection is not used anymore: pass in mods, key, args', {raw=true})
-    else
-        args = startdirection_or_args
-    end
     args = args and awful.util.table.clone(args) or {}
     if not args.keys then
         if key == "Tab" then
