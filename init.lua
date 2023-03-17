@@ -1025,8 +1025,8 @@ cyclefocus.cycle = function(args)
             return true
         end
 
-        local container_margin_top_bottom = dpi(5)
-        local container_margin_left_right = dpi(5)
+        local container_margin_top_bottom = dpi(beautiful.cyclefocus_margin or 5, initial_screen)
+        local container_margin_left_right = dpi(beautiful.cyclefocus_margin or 5, initial_screen)
         if not wbox then
             wbox = wibox({ontop = true })
             wbox._for_screen = mouse.screen
