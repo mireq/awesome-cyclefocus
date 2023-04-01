@@ -516,8 +516,8 @@ local beautiful = require("beautiful")
 cyclefocus.decorate_show_client = function(c)
     return {
         -- border_color = beautiful.fg_focus,
-        border_color = beautiful.border_focus,
-        border_width = c.border_width or 1,
+        --border_color = beautiful.border_focus,
+        --border_width = c.border_width or 1,
         -- XXX: changes layout / triggers resizes.
         -- border_width = 10,
     }
